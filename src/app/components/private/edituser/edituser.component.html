@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-action">
+                    Datos usuario
+            </div>
+                <div class="card-content" *ngFor="let detailuser of getuser">
+                    <form novalidate [formGroup]="contacto" (ngSubmit)="onSubmit()" class="col s12" >
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input formControlName="name" id="first_name" type="text" [(ngModel)]= "detailuser.name" class="validate" required>
+                                <label for="first_name" class="active"> Nombres</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="last_name" type="text" formControlName="lastname" [(ngModel)]= "detailuser.lastname" class="validate" required>
+                                <label for="last_name" class="active">Apellidos</label>
+                            </div>
+                        </div>
+  
+                         <div class="row">
+                          <div class="input-field col s6">
+
+                              <select class="form-control" id="type_documment" disabled>
+                                  <option value="detailuser.typedocument" selected>{{detailuser.typedocument}}</option>
+                              </select>
+                          </div>
+                          <div class="input-field col s6">
+                              <input id="number_document" type="text" formControlName="numberdocument" [(ngModel)]= "detailuser.numberdocument" disabled>
+                              <label for="number_document" class="active">Numero de documento</label>
+                          </div>
+                      </div>
+  
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="email" type="email" formControlName="email"  [(ngModel)]= "detailuser.email" class="validate" required>
+                                <label for="email" class="active">Email</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="cellphone" type="text" formControlName="cellphone" [(ngModel)]= "detailuser.numberphone" class="validate" required>
+                                <label for="email" class="active">Numero de telefono</label>
+                            </div>
+                        </div>
+  
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="username" type="text"  formControlName="username" [(ngModel)]= "detailuser.username" class="validate" required>
+                                <label for="username" class="active">Nombre usuario</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="password" type="text" formControlName="password" [(ngModel)]= "detailuser.password" class="validate" required>
+                                <label for="password" class="active">Contraseña</label>
+                            </div>
+                        </div>
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                    </form>
+                   
+                        <div class="clearBoth"></div>
+                </div>
+        </div>
+  </div>
